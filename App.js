@@ -7,6 +7,7 @@ import HomeScreen from './src/components/playground/homescreen';
 import AboutScreen from './src/components/playground/aboutscreen';
 import HomeContainer from './src/containers/HomeContainer';
 import SearchBox from './src/components/SearchBox';
+import SearchContainer from './src/containers/SearchContainer';
 export default class App extends React.Component {
   render() {
     return (
@@ -25,7 +26,7 @@ const drawer = createDrawerNavigator({
     },
     Locate : {
 
-        screen : SearchBox
+        screen : SearchContainer
 
     },
    
