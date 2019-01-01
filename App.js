@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet , ScrollView } from 'react-native';
 import NavBar from './src/components/NavBar';
-import  { createDrawerNavigator ,  createAppContainer } from 'react-navigation';
+import  { createDrawerNavigator ,  createAppContainer , DrawerItems, SafeAreaView  } from 'react-navigation';
+import { Container, Header, Item, Content, Input, Icon, Button, Text } from 'native-base'
 import HomeScreen from './src/components/playground/homescreen';
 import AboutScreen from './src/components/playground/aboutscreen';
 import HomeContainer from './src/containers/HomeContainer';
+import SearchBox from './src/components/SearchBox';
 export default class App extends React.Component {
   render() {
     return (
@@ -21,23 +23,69 @@ const drawer = createDrawerNavigator({
         screen : HomeContainer,
 
     },
-    About : {
+    Locate : {
 
-        screen : AboutScreen
+        screen : SearchBox
 
-    }
+    },
+   
 
+
+
+},{
+
+  initialRouteName:'Home',
+  drawerPosition:'left',
+  drawerWidth: 250,
+  //contentComponent : props => <ScrollView style={{backgroundColor:'#fffff'}}><DrawerItems {...props} /><Text>Search</Text></ScrollView> ,
+  //contentComponent :SideBar,
+  drawerOpenRoute : 'DrawerOpen',
+  drawerCloseRoute : 'DrawerClose',
+  drawerToggleRoute:'DrawerToggle',
+  //drawerBackgroundColor: 'black',
 
 
 })
 
 const MyApp = createAppContainer(drawer);
 
+
+ const SideBar = (props) => {
+
+  <ScrollView>
+    <SafeAreaView style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
+      <DrawerItems {...props} />
+    </SafeAreaView>
+  </ScrollView>
+
+
+
+
+
+}
+
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    //backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  drawerHeader : {
+
+
+    height:10,
+    backgroundColor:'black'
+
+  },
+  drawerItems : {
+
+
+  backgroundColor:'black',
+  color : 'white'
+
+  },
+
+
 });
