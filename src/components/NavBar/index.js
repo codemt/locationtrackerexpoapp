@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Header, Title, Button, Left, Right, Body, Icon } from 'native-base';
+import { Container, Header, Title, Button, Left, Text, Right, Body, Icon } from 'native-base';
  export default class NavBar extends Component {
   render() {
     return (
@@ -13,7 +13,11 @@ import { Container, Header, Title, Button, Left, Right, Body, Icon } from 'nativ
         <Body>
           <Title>Zenith Group</Title>
         </Body>
-        <Right />
+        <Right>
+        <Button transparent>
+            <Text> Tasks </Text>
+        </Button>
+        </Right>
       </Header>
     </Container>
     )
