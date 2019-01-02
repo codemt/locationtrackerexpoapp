@@ -1,35 +1,67 @@
 import React, { Component } from 'react'
-import { Container, Header, Content, Form, Item, Input, Label , Picker } from Tasks;
+import { Container, Header, Content, Form, Left ,Right, Title,Body ,Item, Button ,Input, Label , Picker, Icon } from 'native-base';
+import { Actions } from 'react-native-router-flux';
+import { Dropdown } from 'react-native-material-dropdown';
+import { TextField } from 'react-native-material-textfield';
+import { TextButton, RaisedTextButton } from 'react-native-material-buttons';
  class Tasks extends Component {
+
+  state = {
+
+      notes : ''
+
+  }
+ 
   render() {
+
+    console.log(this.props.navigation);
+    let { notes } = this.state;
+
+   let salesperson = [{
+    value: 'Ramesh Singh',
+  }, {
+    value: 'Ravish Kazi',
+  }, {
+    value: 'James Bond',
+  }];
+
+  let client = [{
+
+      value :'Fortis Hospitals',
+  },{
+
+      value : 'KPMG'
+  },{
+
+      value : 'Google'
+
+  },{
+
+      value : 'Microsoft'
+
+  }
+]
+
     return (
-        <Container>
-        <Header />
+        <Container> 
+        <Header>
+          <Left>
+            <Button transparent onPress = { () => Actions.pop() }>
+              <Icon name='arrow-back' />
+            </Button>
+          </Left>
+          <Body>
+          <Title> Add Task </Title>
+        </Body>
+        <Right />
+        </Header>
         <Content>
           <Form>
-            <Item floatingLabel>
-              <Label>Enter Task Name </Label>
-              <Input />
-            </Item>
-            <Item picker>
-            <Picker
-              mode="dropdown"
-              iosIcon={<Icon name="ios-arrow-down-outline" />}
-              style={{ width: undefined }}
-              placeholder="Select your SIM"
-              placeholderStyle={{ color: "#bfc6ea" }}
-              placeholderIconColor="#007aff"
-              selectedValue={this.state.selected2}
-              onValueChange={this.onValueChange2.bind(this)}
-            >
-              <Picker.Item label="Wallet" value="key0" />
-              <Picker.Item label="ATM Card" value="key1" />
-              <Picker.Item label="Debit Card" value="key2" />
-              <Picker.Item label="Credit Card" value="key3" />
-              <Picker.Item label="Net Banking" value="key4" />
-            </Picker>
-          </Item>
-
+         
+            <Dropdown label='Select Sales Person' data={salesperson} />
+            <Dropdown label='Select Client ' data={client} />
+            <TextField  keyboardType="default" label='Notes' multiline={true}  value={notes} onChangeText={ (notes) => this.setState({ notes }) }/>
+            <RaisedTextButton title='Submit' />
           </Form>
         </Content>
       </Container>

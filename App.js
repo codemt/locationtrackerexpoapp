@@ -10,6 +10,11 @@ import HomePage from './src/components/playground/homepage'
 import SearchBox from './src/components/SearchBox';
 import SearchContainer from './src/containers/SearchContainer';
 import AddSalesman from './src/components/Salesman/add';
+import myRoutes from './src/routes/index';
+import { Actions , Router , Scene } from 'react-native-router-flux';
+import FormikFormExample from './src/components/playground/formikform';
+import FormikReactNative from './src/components/playground/formikreactnative';
+import ShowSalesman from './src/components/Salesman/show';
 export default class App extends React.Component {
   render() {
     return (
@@ -23,19 +28,21 @@ const drawer = createDrawerNavigator({
 
     Home : {
 
-        screen : HomePage,
+        screen : myRoutes,
 
     },
-    Locate : {
+    Add : {
 
-        screen : SearchContainer
+        screen : FormikReactNative
 
     },
-    AddSalesman : {
+    Display : {
 
-        screen : AddSalesman
+
+        screen : ShowSalesman
 
     }
+    
    
 
 
@@ -50,6 +57,7 @@ const drawer = createDrawerNavigator({
   drawerOpenRoute : 'DrawerOpen',
   drawerCloseRoute : 'DrawerClose',
   drawerToggleRoute:'DrawerToggle',
+  backBehavior: 'initialRoute',
   //drawerBackgroundColor: 'black',
 
 

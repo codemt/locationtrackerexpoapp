@@ -3,10 +3,27 @@ import { View , StyleSheet , Dimensions } from 'react-native'
 import { Container, Header, Title,Input, Button, Left, Content,Text,Item,Card,CardItem, Right, Body, Icon  , Footer , FooterTab} from 'native-base';
 import Maps from '../Maps';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import {Actions} from "react-native-router-flux";
 var window= Dimensions.get('window');
 
  class HomePage extends Component {
+
+        constructor(props){
+
+                super(props);
+
+
+        }
+
+    navigate = (e) =>{
+
+            e.preventDefault();
+            console.log('clicked on tasks');
+            Actions.pop('addTask');
+
+    }
   render() {
+      console.log('Homepage Props', this.props);
     return (
         <Container>
         <Header>
@@ -16,10 +33,10 @@ var window= Dimensions.get('window');
             </Button>
           </Left>
           <Body>
-            <Title>Zenith Group</Title>
+            <Title>Zenium Group</Title>
           </Body>
           <Right>
-          <Button transparent>
+          <Button transparent onPress={ ()=>Actions.addTask() }>
               <Text> Tasks </Text>
           </Button>
           </Right>
