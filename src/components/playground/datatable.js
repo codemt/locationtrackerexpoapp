@@ -1,8 +1,37 @@
 import React, { Component } from 'react'
-import { View , TextInput , StyleSheet } from 'react-native'
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+import { Dimensions } from 'react-native';
+import  { dataSource }  from '../../constants/Sales/people';
 import { Container, Header, Title,Input, Form , Subtitle ,Button, Left, Content,Text,Item,Card,CardItem, Right, Body, Icon  , Footer , FooterTab} from 'native-base';
- class ShowSalesman extends Component {
+import {
+    Platform,
+    StyleSheet,
+    View,
+  } from 'react-native'
+  import Table from 'react-native-simple-table'
+  const columns = [
+    {
+      title: 'Mobile',
+      dataIndex: 'mobile',
+      width: 200
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      width: 200
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age'
+    },
+    {
+      title: 'Sex',
+      dataIndex: 'sex'
+    },
+  ];
+
+  var window = Dimensions.get('window');
+  
+ class DataTable extends Component {
 
   constructor(props) {
     super(props);
@@ -19,7 +48,7 @@ import { Container, Header, Title,Input, Form , Subtitle ,Button, Left, Content,
 
   render() {
   
-      const state = this.state;
+   
       return (
         <Container>
         <Header>
@@ -37,15 +66,14 @@ import { Container, Header, Title,Input, Form , Subtitle ,Button, Left, Content,
         <Content>
         <Card>
         <View style={styles.container}>
-        <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-          <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
-          <Rows data={state.tableData} textStyle={styles.text}/>
-        </Table>
-       </View>
+        <Table height={400} width={400} columnWidth={100} columns={columns} dataSource={dataSource} />
+      </View>
             
          </Card>
             </Content>
       </Container>
+
+     
        
       )
   }
@@ -55,4 +83,4 @@ const styles = StyleSheet.create({
   head: { height: 40, backgroundColor: '#f1f8ff' },
   text: { margin: 6 }
 });
-export default ShowSalesman
+export default DataTable

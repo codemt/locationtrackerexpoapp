@@ -15,6 +15,8 @@ import { Actions , Router , Scene } from 'react-native-router-flux';
 import FormikFormExample from './src/components/playground/formikform';
 import FormikReactNative from './src/components/playground/formikreactnative';
 import ShowSalesman from './src/components/Salesman/show';
+import DataTable from './src/components/playground/datatable';
+import TableView from './src/components/playground/table2';
 export default class App extends React.Component {
   render() {
     return (
@@ -39,7 +41,7 @@ const drawer = createDrawerNavigator({
     Display : {
 
 
-        screen : ShowSalesman
+        screen : TableView
 
     }
     
