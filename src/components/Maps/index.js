@@ -7,23 +7,34 @@ export default () => (
         provider={PROVIDER_GOOGLE} // remove if not using Google Maps
         style={styles.map}
         region={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.015,
-          longitudeDelta: 0.0121,
+          latitude: MapData.latitude,
+          longitude: MapData.longitude,
+          latitudeDelta: MapData.latitudeDelta,
+          longitudeDelta: MapData.longitudeDelta,
         }}
       >
       </MapView>
     </View>
  );
 
+
+ const MapData = {
+  
+    latitude : 37.78825,
+    longitude : -122.4324,
+    latitudeDelta : 0.015,
+    longitudeDelta : 0.0121
+
+
+ }
+
 const styles = StyleSheet.create({
     container: {
       ...StyleSheet.absoluteFillObject,
       height: 400,
-      marginTop: 100,
+      paddingTop: -400,
       width: 400,
-      justifyContent: 'flex-end',
+     // justifyContent: 'flex-end',
       alignItems: 'center',
     },
     map: {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Header, Title, Button, Left, Text, Right, Body, Icon } from 'native-base';
+import { Container, Header, Title, Button, Left, Text, Right, Body, Icon  , Footer , FooterTab} from 'native-base';
  export default class NavBar extends Component {
 
 

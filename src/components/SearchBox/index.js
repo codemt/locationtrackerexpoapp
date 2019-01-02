@@ -8,7 +8,7 @@ import { Container, Header, Item, Input, Icon, Button, Text } from 'native-base'
         <Header searchBar rounded>
           <Item>
             <Icon name="ios-search" />
-            <Input placeholder="Search" />
+            <Input placeholder="Search Employee" />
             <Icon name="ios-people" />
           </Item>
           <Button transparent>

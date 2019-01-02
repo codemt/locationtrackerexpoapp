@@ -6,8 +6,10 @@ import { Container, Header, Item, Content, Input, Icon, Button, Text } from 'nat
 import HomeScreen from './src/components/playground/homescreen';
 import AboutScreen from './src/components/playground/aboutscreen';
 import HomeContainer from './src/containers/HomeContainer';
+import HomePage from './src/components/playground/homepage'
 import SearchBox from './src/components/SearchBox';
 import SearchContainer from './src/containers/SearchContainer';
+import AddSalesman from './src/components/Salesman/add';
 export default class App extends React.Component {
   render() {
     return (
@@ -21,7 +23,7 @@ const drawer = createDrawerNavigator({
 
     Home : {
 
-        screen : HomeContainer,
+        screen : HomePage,
 
     },
     Locate : {
@@ -29,6 +31,11 @@ const drawer = createDrawerNavigator({
         screen : SearchContainer
 
     },
+    AddSalesman : {
+
+        screen : AddSalesman
+
+    }
    
 
 
