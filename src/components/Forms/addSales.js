@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { TextField } from 'react-native-material-textfield';
 import { Container, Header, Title,Input, Form , Subtitle ,Button, Left, Content,Text,Item,Card,CardItem, Right, Body, Icon  , Footer , FooterTab} from 'native-base';
 import { TextButton, RaisedTextButton } from 'react-native-material-buttons';
-class FormikReactNative extends Component {
+class AddSalesForm extends Component {
 
     state = {
 
@@ -49,4 +49,4 @@ class FormikReactNative extends Component {
     )
   }
 }
-export default  FormikReactNative
+export default  AddSalesForm
