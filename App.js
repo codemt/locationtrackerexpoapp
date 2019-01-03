@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet , ScrollView } from 'react-native';
 import  { createDrawerNavigator ,  createAppContainer , DrawerItems, SafeAreaView  } from 'react-navigation';
 import myRoutes from './src/routes/index';
-import TableView from './src/components/playground/table2';
-import TasksTable from './src/components/playground/tasksTable';
 import AddSalesForm from './src/components/Forms/addSales';
+import DisplayTasks from './src/components/Tasks/displayTasks';
+import ShowSalesman from './src/components/Salesman/show';
 export default class App extends React.Component {
   render() {
     return (
@@ -29,7 +29,7 @@ const drawer = createDrawerNavigator({
     Display : {
 
 
-        screen : TableView
+        screen : ShowSalesman
 
     },
     Tasks:{

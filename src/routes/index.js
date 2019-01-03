@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Actions , Router , Scene } from 'react-native-router-flux';
-import HomePage from '../components/playground/homepage';
+import HomePage from '../components/Homepage/index';
 import AddSalesman from '../components/Salesman/add';
 import Tasks from '../components/Tasks';
  class MyRoutes extends Component {
