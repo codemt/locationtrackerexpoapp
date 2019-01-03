@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import {View,StyleSheet,TouchableOpacity,ScrollView,Dimensions,AppRegistry} from "react-native";
 import { Container, Header, Content, Card, Left, Right,Title, Subtitle, Icon,CardItem,Button, Text, Body } from 'native-base';
-import { dataSource } from '../../constants/Sales/people';
+import { dataSource } from '../../constants/Tasks/tasks';
 var window= Dimensions.get('window');
 
 
 var obj;
- class TableView extends Component {
+ class TasksTable extends Component {
     constructor(props) {
         super(props);
         obj = this;
@@ -29,24 +29,24 @@ var obj;
               </Button>
             </Left>
             <Body>
-            <Title> Sales </Title>
+            <Title> Tasks </Title>
           </Body>
           <Right />
           </Header>
           <Content>
           <Card>
           <View style={[styles.view,{paddingBottom:20,paddingTop:20}]}>
-          <Text style={styles.fontB}> Client Name  </Text>
-          <Text style={styles.fontA}> Contact No. </Text>
-          <Text style={styles.fontA}> Email </Text>
-          <Text style={styles.fontB}> Company </Text>
+          <Text style={styles.fontB}> Salesperson Name  </Text>
+          <Text style={styles.fontA}> Client Name </Text>
+          <Text style={styles.fontA}> Assignment Date </Text>
+          <Text style={styles.fontB}> Note </Text>
         </View>
         {dataSource.map(data =>
             <View style={styles.view}>
-          <Text style={styles.fontB}> {data.client_name}  </Text>
-          <Text style={styles.fontA}> {data.contact_person} </Text>
-          <Text style={styles.fontB}>{data.contact_no}</Text>
-          <Text style={styles.fontB}>{data.email}</Text>
+          <Text style={styles.fontB}> {data.sales_person_name}  </Text>
+          <Text style={styles.fontA}> {data.client_name} </Text>
+          <Text style={styles.fontB}>{data.assignment_date}</Text>
+          <Text style={styles.fontB}>{data.Note}</Text>
         </View>
 
         )}
@@ -93,4 +93,4 @@ var obj;
         }
     });
     
-export default TableView
+export default TasksTable

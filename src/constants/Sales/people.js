@@ -1,33 +1,32 @@
 export const dataSource = [{
 
-    mobile:'9769067349',
-    name : 'Mithilesh Tarkar',
-    age :'71',
-    sex:'male'
+    client_name:'Asian Heart Hospital',
+    contact_person : 'HOD',
+    contact_no :66666,
+    email:'abc@abc.com'
 
 
 },{
-mobile:'9769067349',
-name : 'Ram Tarkar',
-age :'71',
-sex:'male'
+    client_name:'Asian Heart Hospital',
+    contact_person : 'HOD',
+    contact_no :66666,
+    email:'abc@abc.com'
 
 },{
-mobile:'9769067349',
-name : 'Ram Tarkar',
-age :'71',
-sex:'male'
+    client_name:'Asian Heart Hospital',
+    contact_person : 'HOD',
+    contact_no :66666,
+    email:'abc@abc.com'
 
 },{
-mobile:'9769067349',
-name : 'Ram Tarkar',
-age :'71',
-sex:'male'
-
+    client_name:'Asian Heart Hospital',
+    contact_person : 'HOD',
+    contact_no :66666,
+    email:'abc@abc.com'
 },{
-mobile:'9769067349',
-name : 'Ram Tarkar',
-age :'71',
-sex:'male'
+    client_name:'Asian Heart Hospital',
+    contact_person : 'HOD',
+    contact_no :66666,
+    email:'abc@abc.com'
 
 }]
